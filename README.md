@@ -41,7 +41,6 @@ has_many :groups, through: :group_users
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
 |text|text|null: false|
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
