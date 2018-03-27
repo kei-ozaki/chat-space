@@ -34,10 +34,11 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
-has_many :messeges
+has_many :messages
 has_many :groups, through: :group_users
+has_many :group_users
 
-## messegesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -56,11 +57,12 @@ belongs_to :group
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index_unique: true|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-has_many :messeges
+has_many :messages
 has_many :users, through: :group_users
+has_many :group_users
+
 
 ## group_usersテーブル
 
