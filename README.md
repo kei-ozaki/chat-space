@@ -56,7 +56,7 @@ belongs_to :group
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index_unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 has_many :messages
