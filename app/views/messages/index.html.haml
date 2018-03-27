@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %header
+
+  %body
+    %groups
+      %groups__header
+        %groups__header__user__name
+        taro
+        %groups__header__icon
+        /font awesomeのやつ
+
+      %groups__contents
+        %group
+          %group__name sample1
+          %group__message no message
+
+        %group
+          %group__name サンプル1
+          %group__message メッセージはないよ
+
+    %chats
+      %chats__header
+        %chats__header__left
+          %group__name sample group
+          %group__member Member: taro
+
+        %chats__header__right Edit
+
+      %chats__contents
+        %message
+          %user__name taro
+          %date その時間
+          %text 本文
+
+        %message
+          %user__name taro
+          %date その時間
+          %text 本文
+
+        %message
+          %user__name taro
+          %date その時間
+          %text 本文
+
+      %chats__footer
+        %chats__footer__left
+          %input__message type a message
+            %image__icon
+
+        %chats__footer__right send
+
+
