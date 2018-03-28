@@ -1,3 +1,59 @@
 @import "./reset";
 @import "./variable";
 
+.header {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: $text-white;
+  background-color: $back-blue;
+  position: fixed;
+}
+
+.body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+  // &groups{
+  //   padding: 30px 20px 0 20px;
+  //   width: 300px;
+  //   height: 100%;
+  //   float: left;
+
+  //   &__header{
+  //     height: 80px;
+  //     background-color: $back-black;
+
+  //     &__user__name{
+  //       font-size: 16px;
+  //       font-weight: bold;
+  //       vertical-align: center;
+  //       color: $text-white;
+  //     }
+
+  //     &__icon{
+
+  //     }
+  //   }
+
+  //   &__contents{
+  //     background-color: $back-navy;
+  //     color: $text-white;
+
+  //     &group{
+  //       padding: 20px 0 20px 0;
+
+  //       &__name{
+  //         font-size: 15px;
+  //       }
+
+  //       &__message{
+  //         font-size: 11px;
+  //         padding: 5px 0 20px 0;
+  //       }
+  //     }
+  //   }
+  // }
