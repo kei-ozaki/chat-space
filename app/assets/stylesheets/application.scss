@@ -1,5 +1,6 @@
 @import "./reset";
 @import "./variable";
+@import "font-awesome";
 
 .header {
   width: 100%;
@@ -37,6 +38,23 @@
   font-weight: bold;
   line-height: 100px;
   padding: 0 20px;
+  float: left;
+}
+
+.chat-side__header__icons {
+  float: right;
+}
+
+.fa {
+  padding: 0 20px;
+  line-height: 100px;
+}
+.fa-edit {
+  float: left;
+}
+
+.fa-cog {
+  float: right;
 }
 
 .chat-side__groups {
