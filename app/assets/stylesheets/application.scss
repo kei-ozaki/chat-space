@@ -7,9 +7,17 @@
   height: $height;
   background-color: $background-color;
 }
+
 @mixin text($color, $size) {
   color: $color;
   font-size: $size;
+}
+
+.body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -18,13 +26,6 @@
   text-align: center;
   line-height: 30px;
   position: fixed;
-}
-
-.body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .chat-side {
