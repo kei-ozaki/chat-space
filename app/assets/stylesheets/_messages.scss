@@ -1,0 +1,173 @@
+@mixin base($width, $height, $background-color) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
+
+@mixin text($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.notification {
+  @include base(100vw, 30px, $back-blue);
+  color: $text-white;
+  text-align: center;
+  line-height: 30px;
+  position: fixed;
+}
+
+.chat-side {
+  @include base(300px, 100vh, null);
+  padding: 30px 0 0 0;
+  float: left;
+  position: fixed;
+
+  .chat-side__header {
+    @include base(300px, 100px, $back-black);
+
+    .chat-side__header__user-name {
+      @include text($text-white, 16px);
+      font-weight: bold;
+      line-height: 100px;
+      margin: 0 20px;
+      float: left;
+    }
+
+    .chat-side__header__icons {
+      margin: 0 20px;
+      float: right;
+
+      .li {
+        color: $text-white;
+        display: inline-block;
+        line-height: 100px;
+      }
+    }
+  }
+
+  .chat-side__groups {
+    @include base(300px, calc(100vh - 100px), $back-navy);
+
+    .group {
+      padding:20px 20px;
+
+      .group__name {
+        @include text($text-white, 15px);
+      }
+
+      .group__message {
+        @include text($text-white, 11px);
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.chat-main {
+  @include base(calc(100% - 300px), 100%, null);
+  padding-top: 30px;
+  float: right;
+
+  .chat-main__header {
+    @include base(calc(100% - 300px), 100px, null);
+    border: 1px;
+    border-style: solid;
+    border-color: $border;
+    position: fixed;
+
+    .chat-main__header__left {
+      padding: 0 40px;
+      float: left;
+
+      .chat__name {
+        @include text($text-title, 20px);
+        margin: 35px 0 0 0;
+      }
+
+      .chat__member {
+        @include text($text-data, 12px);
+        margin-top: 15px 0;
+      }
+    }
+
+    .chat-main__header__right {
+      padding: 0 40px;
+      float: right;
+
+      .chat-edit {
+        height: 40px;
+        padding-top: 28px;
+        margin: 0 20px 0 auto;
+      }
+    }
+  }
+
+  .chat-main__contents {
+      @include base(null, 100vh, yellow);
+    margin-top: 100px;
+    padding: 6px 40px;
+    overflow-y: scroll;
+
+    .ul.message {
+      padding: 40px 0 0 0;
+
+      .li {
+        display: inline-block;
+      }
+
+        .user__name {
+          @include text($text-body, 16);
+          font-weight: bold;
+        }
+
+        .date {
+          @include text($text-data, 12);
+          padding-left: 10px;
+        }
+
+      .text {
+        @include text($text-body, 14);
+      }
+    }
+  }
+
+  .chat-main__footer {
+    @include base(calc(100% - 380px), 50px, $back-white);
+    padding: 20px 40px;
+    position: fixed;
+    bottom: 0px;
+
+    .footer__input {
+      @include base(calc(100% - 115px), 50px, #FFF);
+      line-height: 50px;
+      float: left;
+
+      .input__message{
+        @include text($text-body, 16);
+        padding-left: 10px;
+        float: left;
+      }
+
+      .fa.fa-picture-o {
+        line-height: 50px;
+        padding-right: 10px;
+        float: right;
+      }
+    }
+
+    .footer__send{
+      @include base(100px, 50px, $back-blue);
+      color: $text-white;
+      text-align: center;
+      line-height: 50px;
+      float: right;
+    }
+  }
+}

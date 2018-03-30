@@ -1,0 +1,47 @@
+!!!
+%html
+  %body
+    .notification チャットグループが生成されました。
+
+    .chat-side
+      .chat-side__header
+        .chat-side__header__user-name taro
+        .ul.chat-side__header__icons
+          .li.fa.fa-edit
+          .li.fa.fa-cog
+
+      .chat-side__groups
+        .group
+          .group__name sample1
+          .group__message no message
+
+        .group
+          .group__name サンプル1
+          .group__message メッセージはないよ
+
+    .chat-main
+      .chat-main__header
+        .chat-main__header__left
+          .chat__name sample group
+          .chat__member Member: taro
+
+        .chat-main__header__right
+          .chat-edit Edit
+
+      .chat-main__contents
+
+        .ul.message
+          .li.user__name taro
+          .li.date その時間
+          .text 本文
+
+        .ul.message
+          .li.user__name taro
+          .li.date その時間
+          .text 本文
+
+      .chat-main__footer
+        .footer__input
+          .input__message type a message
+          .fa.fa-picture-o
+        .footer__send Send
