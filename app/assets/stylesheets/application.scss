@@ -15,13 +15,12 @@
 
 .body {
   height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .header {
-  @include base(100%, 30px, $back-blue);
+  @include base(100vw, 30px, $back-blue);
   color: $text-white;
   text-align: center;
   line-height: 30px;
@@ -32,21 +31,21 @@
   @include base(300px, 100vh, null);
   padding: 30px 0 0 0;
   float: left;
+  position: fixed;
 
   .chat-side__header {
     @include base(300px, 100px, $back-black);
-    position: fixed;
 
     .chat-side__header__user-name {
       @include text($text-white, 16px);
       font-weight: bold;
       line-height: 100px;
-      padding: 0 20px;
+      margin: 0 20px;
       float: left;
     }
 
     .chat-side__header__icons {
-      padding: 0 20px;
+      margin: 0 20px;
       float: right;
 
       .fa {
@@ -66,7 +65,6 @@
 
   .chat-side__groups {
     @include base(300px, calc(100vh - 100px), $back-navy);
-    padding: 100px 0 0 0;
 
     .group {
       padding:20px 20px;
@@ -84,12 +82,12 @@
 }
 
 .chat-main {
-  @include base(calc(100vw - 300px), 100vh, null);
-  padding: 30px 0;
+  @include base(calc(100% - 300px), 100%, null);
+  padding-top: 30px;
   float: right;
 
   .chat-main__header {
-    @include base(calc(100vw - 300px), 100px, null);
+    @include base(calc(100% - 300px), 100px, null);
     border: 1px;
     border-style: solid;
     border-color: $border;
@@ -123,9 +121,11 @@
   }
 
   .chat-main__contents {
-      @include base(calc(100vw - 300px), calc(100vh - 190px), $back-white);
+      @include base(null, 100vh, yellow);
     margin-top: 100px;
-    padding: 6px 40px 0 40px;
+    padding: 6px 40px;
+    overflow-y: scroll;
+
 
     .message {
       padding: 40px 0 0 0;
@@ -150,30 +150,35 @@
   }
 
   .chat-main__footer {
-    @include base(calc(100vw - 300px), 90px, $back-white);
-    padding: 0 40px 0 40px;
+    @include base(calc(100% - 380px), 50px, $back-white);
+    padding: 20px 40px;
+    position: fixed;
     bottom: 0px;
 
-    .chat-main__footer__left {
-      float: left;
-    }
-
-    .input__message{
-      @include text($text-body, 16);
+    .footer__input {
+      @include base(calc(100% - 115px), 50px, #FFF);
       line-height: 50px;
-      padding-left: 10px;
+      float: left;
+
+      .input__message{
+        @include text($text-body, 16);
+        padding-left: 10px;
+        float: left;
+      }
+
+      .fa.fa-picture-o {
+        line-height: 50px;
+        padding-right: 10px;
+        float: right;
+      }
     }
-  }
 
-  .chat-main__footer__right {
-    background-color: $back-blue;
-    color: $text-white;
-    padding: 0 40px;
-    margin-right: 40px;
-    float: right;
-  }
-
-  .chat-send {
-    line-height: 50px;
+    .footer__send{
+      @include base(100px, 50px, $back-blue);
+      float: right;
+      color: $text-white;
+      text-align: center;
+      line-height: 50px;
+    }
   }
 }
