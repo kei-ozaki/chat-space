@@ -1,7 +1,3 @@
-@import "./reset";
-@import "./variable";
-@import "font-awesome";
-
 @mixin base($width, $height, $background-color) {
   width: $width;
   height: $height;
