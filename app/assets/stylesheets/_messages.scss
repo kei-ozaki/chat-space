@@ -110,32 +110,37 @@
       }
     }
   }
-  .chat-main__footer {
-    @include base(calc(100% - 380px), 50px, $back-white);
-    padding: 20px 40px;
-    position: fixed;
-    bottom: 0px;
-    .footer__input {
-      @include base(calc(100% - 115px), 50px, #FFF);
-      line-height: 50px;
+  .form {
+    @include base(null, 50px, $back-white);
+    padding: 20px 50px 20px 40px;
+    // position: fixed;
+    // bottom: 0px;
+    .form__message {
+      @include base(calc(100% - 145px), 50px, null);
+      padding-left: 10px;
       float: left;
-      .input__message{
-        @include text($text-body, 16);
-        padding-left: 10px;
-        float: left;
-      }
-      .fa.fa-picture-o {
+      border: none;
+    }
+    .form__mask{
+      @include base(null, 50px, white);
+      float: left;
+      padding-right: 10px;
+      .form__mask__image{
+        font-size: 20px;
         line-height: 50px;
-        padding-right: 10px;
-        float: right;
+      }
+      .hidden {
+        display: none;
       }
     }
-    .footer__send{
-      @include base(100px, 50px, $back-blue);
-      color: $text-white;
+    .form__submit{
+      @include base(null, 50px, $back-blue);
+      @include text($text-white, 16px);
       text-align: center;
-      line-height: 50px;
+      padding: 0 20px;
+      margin-left: 15px;
       float: right;
+      border: none;
     }
   }
 }

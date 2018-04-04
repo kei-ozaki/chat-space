@@ -43,8 +43,11 @@
           .li.date その時間
           .text 本文
 
-      .chat-main__footer
-        .footer__input
-          .input__message type a message
-          .fa.fa-picture-o
-        .footer__send Send
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
