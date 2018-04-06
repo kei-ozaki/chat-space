@@ -116,7 +116,7 @@
     position: fixed;
     bottom: 0px;
     .form__message {
-      @include base(calc(100% - 145px), 50px, null);
+      @include base(calc(100% - 140px), 50px, null);
       padding-left: 10px;
       float: left;
       border: none;
