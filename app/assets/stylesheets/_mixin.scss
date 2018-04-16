@@ -1,0 +1,10 @@
+@mixin base($width, $height, $background-color) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
+
+@mixin text($color, $size) {
+  color: $color;
+  font-size: $size;
+}

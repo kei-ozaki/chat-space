@@ -1,0 +1,38 @@
+.side-contents {
+  @include base(300px, 100%, null);
+  float: left;
+  .header {
+    @include base(null, 100px, $back-black);
+    padding: 0 20px;
+    line-height: 100px;
+    .name {
+      @include text($text-white, 16px);
+      font-weight: bold;
+      float: left;
+    }
+    .icons {
+      float: right;
+      .list {
+        display: inline-block;
+        .icon {
+          @include text($text-white, 16px);
+        }
+      }
+    }
+  }
+  .groups {
+    @include base(null, calc(100vh - 100px), $back-navy);
+    padding: 0 20px;
+    overflow: scroll;
+    .group {
+      padding:20px 0;
+      .group__name {
+        @include text($text-white, 15px);
+      }
+      .group__message {
+        @include text($text-white, 11px);
+        margin-top: 5px;
+      }
+    }
+  }
+}

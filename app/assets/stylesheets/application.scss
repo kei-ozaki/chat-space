@@ -1,7 +1,16 @@
 @import "font-awesome";
-@import "./reset";
 @import "./variable";
-@import "./messages";
-@import "./user";
+@import "./mixin";
+@import "./reset";
+
 @import "./flash";
 @import "./group";
+@import "./main-contents";
+@import "./side-contents";
+@import "./user";
+
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

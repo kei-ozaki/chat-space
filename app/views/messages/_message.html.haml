@@ -1,12 +1,9 @@
-.messages
-  .ul.name-date
-    .li.user-name
+.message-content
+  .name-date
+    .user-name
       = message.user.name
-    .li.date
-      / = format_posted_time(message.created_at)
-      = message.created_at
+    .date
+      = message.created_at.strftime("%y/%m/%d/%H:%M:%S")
   .message
-    - if message.text.present?
-      %p.message__text
-        = message.text
-    = image_tag message.image.url, class: 'message__image' if message.image.present?
+    = message.text
+    = image_tag message.image if message.image.present?
