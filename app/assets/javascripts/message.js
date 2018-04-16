@@ -35,7 +35,6 @@ $(function(){
       $('.chat').append(html)
       $('.textform').val('')
       $('.hidden').val('')
-      // $('.messages').prop('disabled', false);
       $('.chat').animate({scrollTop: $('.chat')[0].scrollHeight})
     })
     .fail(function(){
