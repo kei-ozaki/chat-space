@@ -3,7 +3,7 @@
     .user-name
       = message.user.name
     .date
-      = message.created_at.strftime("%y/%m/%d/%H:%M:%S")
+      = message.created_at.to_s(:default)
   .message
     = message.text
     = image_tag message.image if message.image.present?
