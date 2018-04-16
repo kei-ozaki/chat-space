@@ -1,26 +1,21 @@
 !!!
 %html
   %body
-    .chat-side
+    .side-contents
       = render 'sidebar'
 
-    .chat-main
-      .chat-main__header
-        .chat-main__header__left
-          .chat__name sample group
-          .chat__member Member: taro
+    .main-contents
+      .header
+        = render 'header'
 
-        .chat-main__header__right
-          .chat-edit Edit
-
-      .chat-main__messages
+      .chat
         = render @messages
 
       .form
         = form_for [@group, @message] do |f|
-          = f.text_field :text, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
-              = fa_icon 'picture-o', class: 'icon'
+          = f.text_field :text, class: 'textform', placeholder: 'type a message'
+          .icon
+            = f.label :image, class: 'icon__image' do
+              = fa_icon 'picture-o'
               = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'
+          = f.submit 'Send', class: 'submit'
