@@ -1,44 +1,21 @@
 !!!
 %html
   %body
-    .chat-side
+    .side-contents
+      = render 'sidebar'
+
+    .main-contents
       .header
-        .name
-          = current_user.name
-        .ul.icons
-          .li.list
-            = link_to new_group_path do
-              = fa_icon 'edit', class: 'icon'
-          .li.list
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: 'icon'
+        = render 'header'
 
-      .groups
-        - current_user.groups.each do |group|
-          .group
-            = link_to group_messages_path(group) do
-              .group__name
-                = group.name
-              .group__message
-                = group.show_last_message
-
-    .chat-main
-      .chat-main__header
-        .chat-main__header__left
-          .chat__name sample group
-          .chat__member Member: taro
-
-        .chat-main__header__right
-          .chat-edit Edit
-
-      .chat-main__messages
+      .chat
         = render @messages
 
       .form
         = form_for [@group, @message] do |f|
-          = f.text_field :text, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
-              = fa_icon 'picture-o', class: 'icon'
+          = f.text_field :text, class: 'textform', placeholder: 'type a message'
+          .icon
+            = f.label :image, class: 'icon__image' do
+              = fa_icon 'picture-o'
               = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'
+          = f.submit 'Send', class: 'submit'

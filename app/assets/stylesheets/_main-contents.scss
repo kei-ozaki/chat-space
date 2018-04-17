@@ -1,0 +1,86 @@
+.main-contents {
+  @include base(calc(100% - 300px), 100%, null);
+  float: right;
+  .header {
+    @include base(null, 100px, $back-white);
+    border: 1px;
+    border-style: solid;
+    border-color: $border;
+    .header__left {
+      padding: 0 40px;
+      float: left;
+      .chat__name {
+        @include text($text-title, 20px);
+        margin: 35px 0 0 0;
+      }
+      .chat__member {
+        @include text($text-data, 12px);
+        margin-top: 15px 0;
+      }
+    }
+    .header__right {
+      padding: 0 40px;
+      float: right;
+      height: 40px;
+      padding-top: 28px;
+      margin: 0 20px auto;
+    }
+  }
+  .chat{
+    @include base(null, calc(100% - 100px - 90px), yellow);
+    padding: 46px 40px 0;
+    box-sizing: border-box;
+    overflow: scroll;
+    .message-content {
+      .name-date {
+        display: flex;
+        .user-name {
+          @include text($text-body, 16px);
+          font-weight: bold;
+        }
+        .date {
+          @include text($text-data, 12px);
+          padding-left: 10px;
+        }
+      }
+      .message {
+        @include text($text-body, 14px);
+        padding-bottom: 40px;
+      }
+    }
+  }
+  .form {
+    @include base(calc(100% - 300px), 90px, $back-white);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0px;
+    .textform {
+      @include base(calc(100% - 150px), 50px, null);
+      padding-left: 10px;
+      float: left;
+      border: none;
+    }
+    .icon{
+      @include base(null, 50px, white);
+      float: left;
+      padding-right: 10px;
+      .icon__image{
+        font-size: 20px;
+        line-height: 50px;
+        .hidden {
+          display: none;
+        }
+      }
+    }
+    .submit{
+      @include base(null, 50px, $back-blue);
+      @include text($text-white, 16px);
+      text-align: center;
+      padding: 0 20px;
+      margin-left: 15px;
+      float: right;
+      border: none;
+    }
+  }
+}
