@@ -5,8 +5,19 @@ $(function(){
       url: location.href.json,
     })
     .done(function(data){
+      var id = $('.message-content').data('messageId');
+      var insertHTML = '';
+      json.messages.forEach(function(message){
+        if (message.id > id) {
+        insertHTML += buildHTML(message);
+        }
+      });
+      $('.chat').append(insertHTML);
+      $('.chat').animate({scrollTop: $('.chat')[0].scrollHeight})
+    })
     })
     .fail(function(data){
+      alert('自動更新に失敗しました');
     });
   } else {
     clearInterval(interval);
