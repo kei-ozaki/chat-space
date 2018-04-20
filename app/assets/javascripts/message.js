@@ -1,7 +1,8 @@
 $(function(){
+
   function buildHTML(message){
     var html = `
-               <div class="message-content">
+               <div class="message-content" data-message-id="${message.id}">
                  <div class="name-date">
                    <div class="user-name">
                      ${message.name}
@@ -41,5 +42,29 @@ $(function(){
       alert('メッセージを入力してください');
     })
   return false;
-  })
+  });
+
+  var interval = setInterval(function(){
+    var messageId = $('.message-content').last().data("messageId");
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      $.ajax({
+        url: location.href,
+        data: {id: messageId},
+        dataType: 'json'
+      })
+      .done(function(data){
+        var insertHTML = "";
+        data.messages.forEach(function(message){
+          insertHTML += buildHTML(message);
+        });
+        $('.chat').append(insertHTML);
+        $('.chat').animate({scrollTop: $('.chat')[0].scrollHeight})
+      })
+      .fail(function(data){
+        alert('自動更新に失敗しました');
+      });
+    } else {
+      clearInterval(interval);
+    }
+  }, 5000);
 });
