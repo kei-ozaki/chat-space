@@ -1,12 +1,11 @@
+# ignore cache
+cache
 
-*.cache
-
+# ignore tmp file
 tmp
 
-test/controllers/messages_controller_test.rb
+# ignore log file
+log
 
-log/development.log
-
-*.png
-
-*.log
+# ignore secrets.yaml
+config/secrets.yml
