@@ -8,3 +8,6 @@ test/controllers/messages_controller_test.rb
 log/development.log
 
 *.log
+
+# ignore secrets.yaml
+config/secrets.yml
