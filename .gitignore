@@ -2,7 +2,7 @@
 cache
 
 # ignore tmp file
-tmp
+# tmp
 
 # ignore log file
 log
